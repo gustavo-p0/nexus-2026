@@ -853,29 +853,75 @@ function applyChapterVisual(ch) {
     });
   } 
   else if (ch === 7) {
-    // Metrics culture — fallen and active have personality variations
+    // ★ MÉTRICAS — quem NÃO usa métricas some e reaparece aleatoriamente
+    // Quem USA métricas anda pela arena pulando com energia
+
+    // Wandering para os que usam métricas
+    startWandering({ radius: 7, speed: 2.2, animateLegs: false, faceDir: true, initialDelay: 0.8, pauseMax: 2 });
+
     nodes.forEach(n => {
       if (!n.isMetricsUser) {
-        gsap.to(n.suitMat, { opacity: 0.3, duration: 1.5 });
-        gsap.to(n.visorMat, { opacity: 0.3, duration: 1.5 });
-        // Fall angle and depth vary by personality
-        const fallAngle = (Math.PI / 2) * (0.6 + n.swayAmp * 3);
-        const fallDrop  = 0.4 + n.bobAmp * 0.6;
-        gsap.fromTo(n.group.rotation, { z: 0 }, { z: fallAngle, duration: 0.8 + n.bobAmp * 0.5, ease: 'bounce.out' });
-        gsap.fromTo(n.group.position,  { y: n.baseY }, { y: n.baseY - fallDrop, duration: 0.8, ease: 'bounce.out' });
-        // Nervous ones twitch even while fallen
-        if (n.personality === 'nervous') {
-          gsap.delayedCall(1.2, () => {
-            gsap.fromTo(n.group.rotation, { z: fallAngle - 0.1 }, { z: fallAngle + 0.1, duration: 0.08, yoyo: true, repeat: -1 });
+        // ── INSTÁVEL: some e reaparece em loop ──────────────────
+        n.suitMat.transparent = true;
+        n.visorMat.transparent = true;
+
+        // Loop recursivo de sumir → pausa → aparecer → pausa → sumir
+        function blinkLoop() {
+          if (nav.current !== 7) return; // encerra se saiu do capítulo
+
+          const visibleFor = 1.2 + Math.random() * 2.8; // fica visível 1-4s
+          const hiddenFor  = 0.4 + Math.random() * 1.6; // fica invisível 0.4-2s
+          const disappearDur = { hyper: 0.15, nervous: 0.35, chill: 0.5, curious: 0.25, proud: 0.2 }[n.personality] || 0.3;
+          const appearDur    = disappearDur * 1.6;
+
+          gsap.delayedCall(visibleFor, () => {
+            if (nav.current !== 7) return;
+
+            // Efeito de dissolve ao sumir
+            triggerDissolve(n.idx);
+
+            gsap.to(n.group.scale, {
+              x: 0, y: 0, z: 0,
+              duration: disappearDur,
+              ease: 'back.in(1.8)',
+              onComplete: () => {
+                if (nav.current !== 7) return;
+
+                gsap.delayedCall(hiddenFor, () => {
+                  if (nav.current !== 7) return;
+
+                  // Pop de volta ao aparecer
+                  gsap.to(n.group.scale, {
+                    x: n.baseScale, y: n.baseScale, z: n.baseScale,
+                    duration: appearDur,
+                    ease: 'elastic.out(1.3, 0.45)',
+                    onComplete: blinkLoop // agenda próxima iteração
+                  });
+                });
+              }
+            });
           });
         }
+
+        // Inicia com delay aleatório para não somarem todos ao mesmo tempo
+        gsap.delayedCall(Math.random() * 3.5, blinkLoop);
+
+        // Micro-movimento enquanto visível (nervoso de sumir)
+        gsap.fromTo(n.group.rotation, { z: -n.swayAmp }, { z: n.swayAmp, duration: 0.4 + n.bobAmp * 0.4, yoyo: true, repeat: -1, ease: 'sine.inOut' });
+
       } else {
-        // Active metric users — jump at their own rhythm
-        const jumpH = n.bobAmp * 2.2;
-        const dur   = 0.35 + (1 / n.bobFreq) * 0.3;
-        gsap.fromTo(n.group.position, { y: n.baseY }, { y: n.baseY + jumpH, duration: dur, yoyo: true, repeat: -1, ease: 'sine.inOut', delay: Math.random() * 0.4 });
-        gsap.fromTo(n.legL.position, { y: 0.2 }, { y: 0.5, duration: dur, yoyo: true, repeat: -1 });
-        gsap.fromTo(n.legR.position, { y: 0.2 }, { y: 0.5, duration: dur, yoyo: true, repeat: -1, delay: dur * 0.5 });
+        // ── ESTÁVEL: pula com energia na arena ──────────────────
+        const jumpH = n.bobAmp * 2.8;
+        const dur   = 0.28 + (1 / n.bobFreq) * 0.22;
+
+        gsap.fromTo(n.group.position, { y: n.baseY }, { y: n.baseY + jumpH, duration: dur, yoyo: true, repeat: -1, ease: 'power2.out', delay: Math.random() * 0.5 });
+        gsap.fromTo(n.legL.position, { y: 0.2 }, { y: 0.55 + n.bobAmp, duration: dur, yoyo: true, repeat: -1 });
+        gsap.fromTo(n.legR.position, { y: 0.2 }, { y: 0.55 + n.bobAmp, duration: dur, yoyo: true, repeat: -1, delay: dur * 0.5 });
+
+        // Spin de celebração ocasional
+        if (n.personality === 'hyper' || n.personality === 'proud') {
+          gsap.to(n.group.rotation, { y: '+=' + Math.PI * 2, duration: 0.8, repeat: -1, ease: 'none', delay: Math.random() * 2 });
+        }
       }
     });
   } 
