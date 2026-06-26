@@ -1,5 +1,6 @@
-# Dependências
+# Dependências e build
 node_modules/
+dist/
 
 # Scripts auxiliares
 *.py
