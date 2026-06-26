@@ -1,0 +1,2638 @@
+{
+  "meta": {
+    "n": 54,
+    "n_chapters": 4
+  },
+  "students": [
+    {
+      "id": 1,
+      "bg": "nula",
+      "emp": "empregado",
+      "foco": "Back-end",
+      "sen": 2,
+      "stacks": [
+        "C#/.NET",
+        "Cloud",
+        "SQL/BD",
+        "Java"
+      ],
+      "n_stacks": 4,
+      "ia_pos": 1,
+      "fear_subst": 1,
+      "fear_stag": 1,
+      "quer_exterior": 1,
+      "obj": "migrar",
+      "tem_ingles": 0
+    },
+    {
+      "id": 2,
+      "bg": "nula",
+      "emp": "empregado",
+      "foco": "Full-stack",
+      "sen": 0,
+      "stacks": [
+        "Python"
+      ],
+      "n_stacks": 1,
+      "ia_pos": 1,
+      "fear_subst": 1,
+      "fear_stag": 0,
+      "quer_exterior": 0,
+      "obj": "promocao",
+      "tem_ingles": 0
+    },
+    {
+      "id": 3,
+      "bg": "nula",
+      "emp": "empregado",
+      "foco": "Mobile",
+      "sen": 0,
+      "stacks": [
+        "Python"
+      ],
+      "n_stacks": 1,
+      "ia_pos": 0,
+      "fear_subst": 1,
+      "fear_stag": 0,
+      "quer_exterior": 1,
+      "obj": "migrar",
+      "tem_ingles": 1
+    },
+    {
+      "id": 4,
+      "bg": "nula",
+      "emp": "empregado",
+      "foco": "Back-end",
+      "sen": 1,
+      "stacks": [
+        "Java",
+        "Cloud",
+        "Go",
+        "SQL/BD",
+        "Python"
+      ],
+      "n_stacks": 5,
+      "ia_pos": 0,
+      "fear_subst": 1,
+      "fear_stag": 0,
+      "quer_exterior": 1,
+      "obj": "exterior",
+      "tem_ingles": 1
+    },
+    {
+      "id": 5,
+      "bg": "nula",
+      "emp": "desempregado",
+      "foco": "QA",
+      "sen": 1,
+      "stacks": [
+        "Java",
+        "Python"
+      ],
+      "n_stacks": 2,
+      "ia_pos": 0,
+      "fear_subst": 1,
+      "fear_stag": 0,
+      "quer_exterior": 1,
+      "obj": "exterior",
+      "tem_ingles": 1
+    },
+    {
+      "id": 6,
+      "bg": "autodidata",
+      "emp": "ex_empregado",
+      "foco": "Back-end",
+      "sen": 0,
+      "stacks": [
+        "C#/.NET",
+        "Java"
+      ],
+      "n_stacks": 2,
+      "ia_pos": 0,
+      "fear_subst": 1,
+      "fear_stag": 1,
+      "quer_exterior": 1,
+      "obj": "empreender",
+      "tem_ingles": 0
+    },
+    {
+      "id": 7,
+      "bg": "nula",
+      "emp": "ex_empregado",
+      "foco": "Full-stack",
+      "sen": 0,
+      "stacks": [
+        "JS/TS",
+        "SQL/BD"
+      ],
+      "n_stacks": 2,
+      "ia_pos": 1,
+      "fear_subst": 0,
+      "fear_stag": 1,
+      "quer_exterior": 0,
+      "obj": "migrar",
+      "tem_ingles": 0
+    },
+    {
+      "id": 8,
+      "bg": "autodidata",
+      "emp": "empregado",
+      "foco": "Back-end",
+      "sen": 2,
+      "stacks": [
+        "JS/TS",
+        "PHP",
+        "SQL/BD",
+        "Python"
+      ],
+      "n_stacks": 4,
+      "ia_pos": 0,
+      "fear_subst": 1,
+      "fear_stag": 0,
+      "quer_exterior": 1,
+      "obj": "exterior",
+      "tem_ingles": 1
+    },
+    {
+      "id": 9,
+      "bg": "nula",
+      "emp": "empregado",
+      "foco": "Back-end",
+      "sen": 1,
+      "stacks": [
+        "JS/TS"
+      ],
+      "n_stacks": 1,
+      "ia_pos": 1,
+      "fear_subst": 0,
+      "fear_stag": 1,
+      "quer_exterior": 1,
+      "obj": "migrar",
+      "tem_ingles": 1
+    },
+    {
+      "id": 10,
+      "bg": "autodidata",
+      "emp": "empregado",
+      "foco": "Back-end",
+      "sen": 0,
+      "stacks": [
+        "JS/TS",
+        "SQL/BD",
+        "Python"
+      ],
+      "n_stacks": 3,
+      "ia_pos": 1,
+      "fear_subst": 1,
+      "fear_stag": 0,
+      "quer_exterior": 1,
+      "obj": "exterior",
+      "tem_ingles": 1
+    },
+    {
+      "id": 11,
+      "bg": "autodidata",
+      "emp": "desempregado",
+      "foco": "Full-stack",
+      "sen": 0,
+      "stacks": [
+        "JS/TS",
+        "SQL/BD",
+        "Java",
+        "Python"
+      ],
+      "n_stacks": 4,
+      "ia_pos": 0,
+      "fear_subst": 1,
+      "fear_stag": 1,
+      "quer_exterior": 1,
+      "obj": "primeiro_emprego",
+      "tem_ingles": 1
+    },
+    {
+      "id": 12,
+      "bg": "profissional",
+      "emp": "empregado",
+      "foco": "Back-end",
+      "sen": 0,
+      "stacks": [
+        "C#/.NET",
+        "SQL/BD"
+      ],
+      "n_stacks": 2,
+      "ia_pos": 1,
+      "fear_subst": 1,
+      "fear_stag": 1,
+      "quer_exterior": 0,
+      "obj": "empreender",
+      "tem_ingles": 0
+    },
+    {
+      "id": 13,
+      "bg": "outro",
+      "emp": "ex_empregado",
+      "foco": "Back-end",
+      "sen": 1,
+      "stacks": [
+        "Cloud",
+        "SQL/BD",
+        "Python"
+      ],
+      "n_stacks": 3,
+      "ia_pos": 1,
+      "fear_subst": 0,
+      "fear_stag": 0,
+      "quer_exterior": 0,
+      "obj": "migrar",
+      "tem_ingles": 1
+    },
+    {
+      "id": 14,
+      "bg": "autodidata",
+      "emp": "empregado",
+      "foco": "Back-end",
+      "sen": 0,
+      "stacks": [
+        "C#/.NET",
+        "Java"
+      ],
+      "n_stacks": 2,
+      "ia_pos": 1,
+      "fear_subst": 1,
+      "fear_stag": 0,
+      "quer_exterior": 1,
+      "obj": "promocao",
+      "tem_ingles": 0
+    },
+    {
+      "id": 15,
+      "bg": "nula",
+      "emp": "desempregado",
+      "foco": "QA",
+      "sen": 0,
+      "stacks": [
+        "Java",
+        "Python"
+      ],
+      "n_stacks": 2,
+      "ia_pos": 1,
+      "fear_subst": 1,
+      "fear_stag": 0,
+      "quer_exterior": 1,
+      "obj": "exterior",
+      "tem_ingles": 1
+    },
+    {
+      "id": 16,
+      "bg": "nula",
+      "emp": "ex_empregado",
+      "foco": "Back-end",
+      "sen": 1,
+      "stacks": [
+        "Java",
+        "JS/TS",
+        "C#/.NET",
+        "SQL/BD",
+        "Python"
+      ],
+      "n_stacks": 5,
+      "ia_pos": 1,
+      "fear_subst": 1,
+      "fear_stag": 0,
+      "quer_exterior": 1,
+      "obj": "exterior",
+      "tem_ingles": 1
+    },
+    {
+      "id": 17,
+      "bg": "autodidata",
+      "emp": "ex_empregado",
+      "foco": "Back-end",
+      "sen": 0,
+      "stacks": [
+        "Java",
+        "Cloud",
+        "JS/TS",
+        "SQL/BD",
+        "Python"
+      ],
+      "n_stacks": 5,
+      "ia_pos": 1,
+      "fear_subst": 1,
+      "fear_stag": 1,
+      "quer_exterior": 1,
+      "obj": "exterior",
+      "tem_ingles": 1
+    },
+    {
+      "id": 18,
+      "bg": "outro",
+      "emp": "empregado",
+      "foco": "Back-end",
+      "sen": 1,
+      "stacks": [
+        "JS/TS",
+        "SQL/BD",
+        "Python"
+      ],
+      "n_stacks": 3,
+      "ia_pos": 1,
+      "fear_subst": 1,
+      "fear_stag": 0,
+      "quer_exterior": 1,
+      "obj": "exterior",
+      "tem_ingles": 0
+    },
+    {
+      "id": 19,
+      "bg": "nula",
+      "emp": "empregado",
+      "foco": "Full-stack",
+      "sen": 1,
+      "stacks": [
+        "JS/TS",
+        "C#/.NET",
+        "SQL/BD",
+        "Python"
+      ],
+      "n_stacks": 4,
+      "ia_pos": 1,
+      "fear_subst": 0,
+      "fear_stag": 1,
+      "quer_exterior": 1,
+      "obj": "migrar",
+      "tem_ingles": 1
+    },
+    {
+      "id": 20,
+      "bg": "nula",
+      "emp": "empregado",
+      "foco": "Back-end",
+      "sen": 1,
+      "stacks": [
+        "Java",
+        "Cloud",
+        "JS/TS",
+        "SQL/BD",
+        "Python"
+      ],
+      "n_stacks": 5,
+      "ia_pos": 1,
+      "fear_subst": 0,
+      "fear_stag": 0,
+      "quer_exterior": 1,
+      "obj": "migrar",
+      "tem_ingles": 1
+    },
+    {
+      "id": 21,
+      "bg": "autodidata",
+      "emp": "empregado",
+      "foco": "Back-end",
+      "sen": 2,
+      "stacks": [
+        "Go",
+        "Cloud",
+        "SQL/BD",
+        "Java"
+      ],
+      "n_stacks": 4,
+      "ia_pos": 1,
+      "fear_subst": 1,
+      "fear_stag": 1,
+      "quer_exterior": 0,
+      "obj": "promocao",
+      "tem_ingles": 1
+    },
+    {
+      "id": 22,
+      "bg": "nula",
+      "emp": "desempregado",
+      "foco": "Back-end",
+      "sen": 0,
+      "stacks": [
+        "JS/TS",
+        "Cloud",
+        "SQL/BD",
+        "Python"
+      ],
+      "n_stacks": 4,
+      "ia_pos": 0,
+      "fear_subst": 1,
+      "fear_stag": 0,
+      "quer_exterior": 1,
+      "obj": "exterior",
+      "tem_ingles": 1
+    },
+    {
+      "id": 23,
+      "bg": "autodidata",
+      "emp": "empregado",
+      "foco": "Back-end",
+      "sen": 2,
+      "stacks": [
+        "Cloud",
+        "SQL/BD",
+        "Java",
+        "Python"
+      ],
+      "n_stacks": 4,
+      "ia_pos": 1,
+      "fear_subst": 0,
+      "fear_stag": 0,
+      "quer_exterior": 1,
+      "obj": "outro",
+      "tem_ingles": 1
+    },
+    {
+      "id": 24,
+      "bg": "nula",
+      "emp": "empregado",
+      "foco": "Dados",
+      "sen": 1,
+      "stacks": [
+        "Java",
+        "JS/TS",
+        "SQL/BD",
+        "Python",
+        "BI"
+      ],
+      "n_stacks": 5,
+      "ia_pos": 1,
+      "fear_subst": 1,
+      "fear_stag": 1,
+      "quer_exterior": 1,
+      "obj": "exterior",
+      "tem_ingles": 1
+    },
+    {
+      "id": 25,
+      "bg": "profissional",
+      "emp": "ex_empregado",
+      "foco": "Full-stack",
+      "sen": 0,
+      "stacks": [
+        "Java",
+        "C/C++",
+        "JS/TS",
+        "C#/.NET",
+        "Python"
+      ],
+      "n_stacks": 5,
+      "ia_pos": 1,
+      "fear_subst": 1,
+      "fear_stag": 0,
+      "quer_exterior": 0,
+      "obj": "empreender",
+      "tem_ingles": 1
+    },
+    {
+      "id": 26,
+      "bg": "autodidata",
+      "emp": "empregado",
+      "foco": "Back-end",
+      "sen": 2,
+      "stacks": [
+        "Java",
+        "Apex",
+        "Cloud",
+        "JS/TS",
+        "Go",
+        "SQL/BD"
+      ],
+      "n_stacks": 6,
+      "ia_pos": 0,
+      "fear_subst": 0,
+      "fear_stag": 0,
+      "quer_exterior": 1,
+      "obj": "exterior",
+      "tem_ingles": 1
+    },
+    {
+      "id": 27,
+      "bg": "autodidata",
+      "emp": "ex_empregado",
+      "foco": "Outro",
+      "sen": 1,
+      "stacks": [
+        "Java",
+        "JS/TS",
+        "C#/.NET",
+        "SQL/BD",
+        "Python"
+      ],
+      "n_stacks": 5,
+      "ia_pos": 1,
+      "fear_subst": 1,
+      "fear_stag": 1,
+      "quer_exterior": 1,
+      "obj": "exterior",
+      "tem_ingles": 1
+    },
+    {
+      "id": 28,
+      "bg": "autodidata",
+      "emp": "empregado",
+      "foco": "Back-end",
+      "sen": 2,
+      "stacks": [
+        "Java",
+        "Cloud",
+        "JS/TS",
+        "C#/.NET",
+        "SQL/BD"
+      ],
+      "n_stacks": 5,
+      "ia_pos": 1,
+      "fear_subst": 0,
+      "fear_stag": 0,
+      "quer_exterior": 1,
+      "obj": "exterior",
+      "tem_ingles": 1
+    },
+    {
+      "id": 29,
+      "bg": "nula",
+      "emp": "ex_empregado",
+      "foco": "Back-end",
+      "sen": 0,
+      "stacks": [
+        "JS/TS",
+        "Python"
+      ],
+      "n_stacks": 2,
+      "ia_pos": 1,
+      "fear_subst": 1,
+      "fear_stag": 0,
+      "quer_exterior": 0,
+      "obj": "empreender",
+      "tem_ingles": 1
+    },
+    {
+      "id": 30,
+      "bg": "profissional",
+      "emp": "empregado",
+      "foco": "Full-stack",
+      "sen": 2,
+      "stacks": [
+        "Java",
+        "JS/TS",
+        "C#/.NET",
+        "SQL/BD",
+        "Python"
+      ],
+      "n_stacks": 5,
+      "ia_pos": 0,
+      "fear_subst": 1,
+      "fear_stag": 1,
+      "quer_exterior": 1,
+      "obj": "exterior",
+      "tem_ingles": 1
+    },
+    {
+      "id": 31,
+      "bg": "nula",
+      "emp": "empregado",
+      "foco": "Mobile",
+      "sen": 1,
+      "stacks": [
+        "Java",
+        "Cloud",
+        "JS/TS",
+        "Swift",
+        "SQL/BD",
+        "Python",
+        "Kotlin/Swift"
+      ],
+      "n_stacks": 7,
+      "ia_pos": 1,
+      "fear_subst": 0,
+      "fear_stag": 0,
+      "quer_exterior": 1,
+      "obj": "exterior",
+      "tem_ingles": 1
+    },
+    {
+      "id": 32,
+      "bg": "outro",
+      "emp": "empregado",
+      "foco": "Back-end",
+      "sen": 2,
+      "stacks": [
+        "JS/TS",
+        "SQL/BD",
+        "Java"
+      ],
+      "n_stacks": 3,
+      "ia_pos": 1,
+      "fear_subst": 1,
+      "fear_stag": 1,
+      "quer_exterior": 1,
+      "obj": "exterior",
+      "tem_ingles": 1
+    },
+    {
+      "id": 33,
+      "bg": "nula",
+      "emp": "empregado",
+      "foco": "Back-end",
+      "sen": 2,
+      "stacks": [
+        "JS/TS",
+        "SQL/BD",
+        "Java"
+      ],
+      "n_stacks": 3,
+      "ia_pos": 1,
+      "fear_subst": 1,
+      "fear_stag": 0,
+      "quer_exterior": 1,
+      "obj": "exterior",
+      "tem_ingles": 1
+    },
+    {
+      "id": 34,
+      "bg": "nula",
+      "emp": "empregado",
+      "foco": "Back-end",
+      "sen": 2,
+      "stacks": [
+        "JS/TS",
+        "Cloud",
+        "SQL/BD",
+        "Java"
+      ],
+      "n_stacks": 4,
+      "ia_pos": 1,
+      "fear_subst": 1,
+      "fear_stag": 1,
+      "quer_exterior": 0,
+      "obj": "migrar",
+      "tem_ingles": 0
+    },
+    {
+      "id": 35,
+      "bg": "nula",
+      "emp": "empregado",
+      "foco": "Back-end",
+      "sen": 1,
+      "stacks": [
+        "Java"
+      ],
+      "n_stacks": 1,
+      "ia_pos": 1,
+      "fear_subst": 1,
+      "fear_stag": 0,
+      "quer_exterior": 1,
+      "obj": "promocao",
+      "tem_ingles": 0
+    },
+    {
+      "id": 36,
+      "bg": "profissional",
+      "emp": "empregado",
+      "foco": "Back-end",
+      "sen": 3,
+      "stacks": [
+        "SQL/BD",
+        "Ruby"
+      ],
+      "n_stacks": 2,
+      "ia_pos": 1,
+      "fear_subst": 1,
+      "fear_stag": 1,
+      "quer_exterior": 1,
+      "obj": "estavel",
+      "tem_ingles": 1
+    },
+    {
+      "id": 37,
+      "bg": "nula",
+      "emp": "empregado",
+      "foco": "Full-stack",
+      "sen": 2,
+      "stacks": [
+        "IA/Prompts",
+        "SQL/BD",
+        "Python",
+        "Kotlin/Swift"
+      ],
+      "n_stacks": 4,
+      "ia_pos": 1,
+      "fear_subst": 1,
+      "fear_stag": 1,
+      "quer_exterior": 0,
+      "obj": "empreender",
+      "tem_ingles": 1
+    },
+    {
+      "id": 38,
+      "bg": "autodidata",
+      "emp": "empregado",
+      "foco": "Full-stack",
+      "sen": 2,
+      "stacks": [
+        "JS/TS",
+        "SQL/BD",
+        "Kotlin/Swift"
+      ],
+      "n_stacks": 3,
+      "ia_pos": 1,
+      "fear_subst": 1,
+      "fear_stag": 0,
+      "quer_exterior": 1,
+      "obj": "promocao",
+      "tem_ingles": 0
+    },
+    {
+      "id": 39,
+      "bg": "autodidata",
+      "emp": "empregado",
+      "foco": "Back-end",
+      "sen": 2,
+      "stacks": [
+        "Python"
+      ],
+      "n_stacks": 1,
+      "ia_pos": 1,
+      "fear_subst": 0,
+      "fear_stag": 0,
+      "quer_exterior": 1,
+      "obj": "exterior",
+      "tem_ingles": 1
+    },
+    {
+      "id": 40,
+      "bg": "nula",
+      "emp": "empregado",
+      "foco": "Full-stack",
+      "sen": 1,
+      "stacks": [
+        "SQL/BD",
+        "PHP"
+      ],
+      "n_stacks": 2,
+      "ia_pos": 1,
+      "fear_subst": 1,
+      "fear_stag": 0,
+      "quer_exterior": 1,
+      "obj": "exterior",
+      "tem_ingles": 1
+    },
+    {
+      "id": 41,
+      "bg": "nula",
+      "emp": "empregado",
+      "foco": "Mobile",
+      "sen": 3,
+      "stacks": [
+        "Java",
+        "Kotlin/Swift"
+      ],
+      "n_stacks": 2,
+      "ia_pos": 0,
+      "fear_subst": 1,
+      "fear_stag": 1,
+      "quer_exterior": 0,
+      "obj": "promocao",
+      "tem_ingles": 1
+    },
+    {
+      "id": 42,
+      "bg": "nula",
+      "emp": "empregado",
+      "foco": "Outro",
+      "sen": 1,
+      "stacks": [
+        "JS/TS",
+        "SQL/BD",
+        "Java",
+        "Python"
+      ],
+      "n_stacks": 4,
+      "ia_pos": 1,
+      "fear_subst": 0,
+      "fear_stag": 0,
+      "quer_exterior": 1,
+      "obj": "exterior",
+      "tem_ingles": 1
+    },
+    {
+      "id": 43,
+      "bg": "autodidata",
+      "emp": "empregado",
+      "foco": "Back-end",
+      "sen": 1,
+      "stacks": [
+        "JS/TS",
+        "C#/.NET",
+        "SQL/BD",
+        "Java"
+      ],
+      "n_stacks": 4,
+      "ia_pos": 0,
+      "fear_subst": 1,
+      "fear_stag": 0,
+      "quer_exterior": 0,
+      "obj": "migrar",
+      "tem_ingles": 1
+    },
+    {
+      "id": 44,
+      "bg": "profissional",
+      "emp": "empregado",
+      "foco": "Back-end",
+      "sen": 3,
+      "stacks": [
+        "Go",
+        "Java"
+      ],
+      "n_stacks": 2,
+      "ia_pos": 0,
+      "fear_subst": 1,
+      "fear_stag": 0,
+      "quer_exterior": 1,
+      "obj": "exterior",
+      "tem_ingles": 1
+    },
+    {
+      "id": 45,
+      "bg": "nula",
+      "emp": "empregado",
+      "foco": "Back-end",
+      "sen": 1,
+      "stacks": [
+        "Python",
+        "Kotlin/Swift"
+      ],
+      "n_stacks": 2,
+      "ia_pos": 1,
+      "fear_subst": 1,
+      "fear_stag": 0,
+      "quer_exterior": 0,
+      "obj": "promocao",
+      "tem_ingles": 1
+    },
+    {
+      "id": 46,
+      "bg": "profissional",
+      "emp": "empregado",
+      "foco": "Back-end",
+      "sen": 2,
+      "stacks": [
+        "Java",
+        "Cloud",
+        "JS/TS",
+        "SQL/BD",
+        "Python"
+      ],
+      "n_stacks": 5,
+      "ia_pos": 1,
+      "fear_subst": 0,
+      "fear_stag": 1,
+      "quer_exterior": 0,
+      "obj": "migrar",
+      "tem_ingles": 1
+    },
+    {
+      "id": 47,
+      "bg": "autodidata",
+      "emp": "empregado",
+      "foco": "Back-end",
+      "sen": 2,
+      "stacks": [
+        "JS/TS",
+        "Cloud",
+        "SQL/BD",
+        "Python"
+      ],
+      "n_stacks": 4,
+      "ia_pos": 1,
+      "fear_subst": 1,
+      "fear_stag": 0,
+      "quer_exterior": 1,
+      "obj": "promocao",
+      "tem_ingles": 1
+    },
+    {
+      "id": 48,
+      "bg": "autodidata",
+      "emp": "empregado",
+      "foco": "Back-end",
+      "sen": 1,
+      "stacks": [
+        "JS/TS",
+        "C#/.NET",
+        "SQL/BD",
+        "Java"
+      ],
+      "n_stacks": 4,
+      "ia_pos": 1,
+      "fear_subst": 1,
+      "fear_stag": 0,
+      "quer_exterior": 1,
+      "obj": "exterior",
+      "tem_ingles": 1
+    },
+    {
+      "id": 49,
+      "bg": "autodidata",
+      "emp": "empregado",
+      "foco": "Full-stack",
+      "sen": 2,
+      "stacks": [
+        "JS/TS",
+        "Java",
+        "Kotlin/Swift"
+      ],
+      "n_stacks": 3,
+      "ia_pos": 1,
+      "fear_subst": 1,
+      "fear_stag": 0,
+      "quer_exterior": 1,
+      "obj": "exterior",
+      "tem_ingles": 0
+    },
+    {
+      "id": 50,
+      "bg": "nula",
+      "emp": "empregado",
+      "foco": "Back-end",
+      "sen": 1,
+      "stacks": [
+        "JS/TS",
+        "SQL/BD",
+        "Java",
+        "Python"
+      ],
+      "n_stacks": 4,
+      "ia_pos": 1,
+      "fear_subst": 0,
+      "fear_stag": 1,
+      "quer_exterior": 1,
+      "obj": "exterior",
+      "tem_ingles": 1
+    },
+    {
+      "id": 51,
+      "bg": "autodidata",
+      "emp": "empregado",
+      "foco": "Full-stack",
+      "sen": 2,
+      "stacks": [
+        "JS/TS",
+        "Cloud",
+        "SQL/BD",
+        "Java"
+      ],
+      "n_stacks": 4,
+      "ia_pos": 1,
+      "fear_subst": 1,
+      "fear_stag": 1,
+      "quer_exterior": 1,
+      "obj": "exterior",
+      "tem_ingles": 1
+    },
+    {
+      "id": 52,
+      "bg": "nula",
+      "emp": "empregado",
+      "foco": "Outro",
+      "sen": 0,
+      "stacks": [
+        "JS/TS",
+        "Java",
+        "Python"
+      ],
+      "n_stacks": 3,
+      "ia_pos": 1,
+      "fear_subst": 1,
+      "fear_stag": 0,
+      "quer_exterior": 0,
+      "obj": "empreender",
+      "tem_ingles": 1
+    },
+    {
+      "id": 53,
+      "bg": "profissional",
+      "emp": "empregado",
+      "foco": "Back-end",
+      "sen": 2,
+      "stacks": [
+        "C#/.NET",
+        "Cloud",
+        "SQL/BD",
+        "Java"
+      ],
+      "n_stacks": 4,
+      "ia_pos": 1,
+      "fear_subst": 0,
+      "fear_stag": 1,
+      "quer_exterior": 1,
+      "obj": "promocao",
+      "tem_ingles": 1
+    },
+    {
+      "id": 54,
+      "bg": "autodidata",
+      "emp": "empregado",
+      "foco": "Full-stack",
+      "sen": 1,
+      "stacks": [
+        "JS/TS",
+        "SQL/BD",
+        "Java",
+        "Python"
+      ],
+      "n_stacks": 4,
+      "ia_pos": 1,
+      "fear_subst": 1,
+      "fear_stag": 1,
+      "quer_exterior": 1,
+      "obj": "migrar",
+      "tem_ingles": 1
+    }
+  ],
+  "skill_nodes": [
+    {
+      "id": "JS/TS",
+      "x": 3,
+      "y": 0,
+      "z": 1,
+      "freq": 33
+    },
+    {
+      "id": "Python",
+      "x": -1,
+      "y": 0,
+      "z": 4,
+      "freq": 31
+    },
+    {
+      "id": "Java",
+      "x": -3,
+      "y": 0,
+      "z": -2,
+      "freq": 35
+    },
+    {
+      "id": "SQL/BD",
+      "x": 2,
+      "y": 0,
+      "z": -3,
+      "freq": 38
+    },
+    {
+      "id": "C#/.NET",
+      "x": 0,
+      "y": 0.5,
+      "z": -1,
+      "freq": 13
+    },
+    {
+      "id": "Cloud",
+      "x": 1,
+      "y": -0.5,
+      "z": 2,
+      "freq": 16
+    },
+    {
+      "id": "Kotlin/Swift",
+      "x": -2,
+      "y": 1,
+      "z": 1,
+      "freq": 6
+    },
+    {
+      "id": "Go",
+      "x": 4,
+      "y": 0,
+      "z": -1,
+      "freq": 4
+    }
+  ],
+  "skill_links": [
+    {
+      "source": "C#/.NET",
+      "target": "Cloud",
+      "value": 3
+    },
+    {
+      "source": "C#/.NET",
+      "target": "SQL/BD",
+      "value": 10
+    },
+    {
+      "source": "C#/.NET",
+      "target": "Java",
+      "value": 11
+    },
+    {
+      "source": "Cloud",
+      "target": "SQL/BD",
+      "value": 16
+    },
+    {
+      "source": "Cloud",
+      "target": "Java",
+      "value": 13
+    },
+    {
+      "source": "Java",
+      "target": "SQL/BD",
+      "value": 25
+    },
+    {
+      "source": "Java",
+      "target": "Python",
+      "value": 18
+    },
+    {
+      "source": "Cloud",
+      "target": "Go",
+      "value": 3
+    },
+    {
+      "source": "Cloud",
+      "target": "Python",
+      "value": 9
+    },
+    {
+      "source": "Go",
+      "target": "Java",
+      "value": 4
+    },
+    {
+      "source": "Go",
+      "target": "SQL/BD",
+      "value": 3
+    },
+    {
+      "source": "Python",
+      "target": "SQL/BD",
+      "value": 22
+    },
+    {
+      "source": "JS/TS",
+      "target": "SQL/BD",
+      "value": 28
+    },
+    {
+      "source": "JS/TS",
+      "target": "Python",
+      "value": 21
+    },
+    {
+      "source": "PHP",
+      "target": "SQL/BD",
+      "value": 2
+    },
+    {
+      "source": "JS/TS",
+      "target": "Java",
+      "value": 23
+    },
+    {
+      "source": "C#/.NET",
+      "target": "JS/TS",
+      "value": 8
+    },
+    {
+      "source": "C#/.NET",
+      "target": "Python",
+      "value": 5
+    },
+    {
+      "source": "Cloud",
+      "target": "JS/TS",
+      "value": 10
+    },
+    {
+      "source": "Java",
+      "target": "Kotlin/Swift",
+      "value": 3
+    },
+    {
+      "source": "JS/TS",
+      "target": "Kotlin/Swift",
+      "value": 3
+    },
+    {
+      "source": "Kotlin/Swift",
+      "target": "SQL/BD",
+      "value": 3
+    },
+    {
+      "source": "Kotlin/Swift",
+      "target": "Python",
+      "value": 3
+    }
+  ],
+  "morph_targets": {
+    "origem": [
+      [
+        -0.9472561026402972,
+        0.08512963709904448,
+        -1.1469236955576623
+      ],
+      [
+        -1.8523093573218432,
+        -0.16927300100229467,
+        -2.601697152357267
+      ],
+      [
+        -0.326222059339345,
+        0.05395839760062835,
+        1.4715479938234401
+      ],
+      [
+        -1.1750497626377667,
+        -0.17766044651589805,
+        0.08438290554398603
+      ],
+      [
+        0.5733098825989281,
+        0.1645967059944412,
+        -2.738836766861457
+      ],
+      [
+        5.1319245275761824,
+        0.5477598362280098,
+        3.7232786799490927
+      ],
+      [
+        -1.171619530514302,
+        0.03734137129208078,
+        1.4579223863915496
+      ],
+      [
+        5.121802746801459,
+        0.44033409709777455,
+        3.8353883816438588
+      ],
+      [
+        0.9088304903266826,
+        -0.04372762420499275,
+        -1.5677367709514138
+      ],
+      [
+        4.687832198823926,
+        0.44648837088796584,
+        3.258616202377791
+      ],
+      [
+        3.797115691423327,
+        0.4889318633889277,
+        3.4568501132202023
+      ],
+      [
+        -3.144479106688007,
+        -0.5398551254383265,
+        -4.016572824908406
+      ],
+      [
+        2.715448043643099,
+        0.08365607907473024,
+        -1.9007192139229263
+      ],
+      [
+        5.425541320337631,
+        0.4728871459473289,
+        3.748046653815346
+      ],
+      [
+        -2.3240005913642614,
+        0.027846772292434336,
+        -0.30593108159630544
+      ],
+      [
+        -0.6886649004252239,
+        -0.1512748883074941,
+        -1.2718414076505615
+      ],
+      [
+        6.082326150968693,
+        0.4454246042050303,
+        2.9795541592725883
+      ],
+      [
+        2.655557330897094,
+        -0.2849935468663998,
+        -2.8548896462598594
+      ],
+      [
+        -0.21302424919083973,
+        -0.04866041557076967,
+        1.3091348262862115
+      ],
+      [
+        -1.26791233698174,
+        0.05329273868877368,
+        1.6307305449588712
+      ],
+      [
+        5.198086893133374,
+        0.45971130336102456,
+        3.5789299520707902
+      ],
+      [
+        -0.6310560295540624,
+        -0.0433960409672468,
+        -1.302352145856669
+      ],
+      [
+        5.786940942754282,
+        0.5517874976365396,
+        3.8043554706703873
+      ],
+      [
+        2.324564064165685,
+        0.12342669126833145,
+        0.12931288476571773
+      ],
+      [
+        -4.4638567359654955,
+        -0.4585298987052995,
+        -4.6003262921165575
+      ],
+      [
+        5.7668605791723735,
+        0.4470529062164036,
+        3.0728015814478
+      ],
+      [
+        5.942749537878871,
+        0.5442795676783967,
+        2.81396556573312
+      ],
+      [
+        5.146641723049398,
+        0.4952515521972812,
+        3.4524139628456627
+      ],
+      [
+        -0.4772483116235606,
+        -0.08361328464874701,
+        -1.6394347801509233
+      ],
+      [
+        -3.490897461809284,
+        -0.5238316494499162,
+        -3.645926105353784
+      ],
+      [
+        1.2635651956609955,
+        0.05595791950615682,
+        2.5160131858651607
+      ],
+      [
+        -3.6522051118094327,
+        -0.13498240897852845,
+        -3.7630788020079806
+      ],
+      [
+        -2.2972399939323385,
+        -0.09121409723016596,
+        1.3671929900260076
+      ],
+      [
+        -1.2182870047906758,
+        -0.036215818149456985,
+        0.05072338843438384
+      ],
+      [
+        0.5880142088634361,
+        -0.16303810484709558,
+        2.32572467313231
+      ],
+      [
+        -3.3441491305828297,
+        -0.48925566407011073,
+        -3.185494456292543
+      ],
+      [
+        2.149949664545608,
+        -0.15713002578529545,
+        1.2930443385311063
+      ],
+      [
+        5.23565453211245,
+        0.48597746462272673,
+        1.5316864617931545
+      ],
+      [
+        4.078029594331892,
+        0.492600350887971,
+        3.8991954520081666
+      ],
+      [
+        -2.15802118739379,
+        0.1298806928044193,
+        2.7323877819844364
+      ],
+      [
+        2.679804366734525,
+        -0.0839429316170846,
+        0.2294092619073734
+      ],
+      [
+        -0.8155617200960177,
+        0.16337373390758886,
+        -0.9477297002180078
+      ],
+      [
+        4.145028357728281,
+        0.4918108272876978,
+        3.68858422865946
+      ],
+      [
+        -4.729436837868986,
+        -0.5266166720518817,
+        -3.325924640886743
+      ],
+      [
+        1.033879884611097,
+        0.1485460221641354,
+        -1.5040097317415169
+      ],
+      [
+        -4.180697474786471,
+        -0.5180002628181114,
+        -4.444883741676338
+      ],
+      [
+        5.302331159286971,
+        0.548387972251513,
+        2.6130424843836546
+      ],
+      [
+        6.674733200418691,
+        0.49793232206490345,
+        2.4576560758390014
+      ],
+      [
+        4.843616466813822,
+        0.5698844735042805,
+        3.751770100484775
+      ],
+      [
+        1.2571663353620401,
+        -0.12497786332213145,
+        -0.9460747267971309
+      ],
+      [
+        4.842563811002349,
+        0.565853740283793,
+        4.205875373644469
+      ],
+      [
+        0.5775607159910463,
+        -0.17979411739394036,
+        -1.9808885046462736
+      ],
+      [
+        -4.65699267246884,
+        -0.4551391003231002,
+        -3.11795185679051
+      ],
+      [
+        6.207855939776109,
+        0.4707259268712172,
+        2.694116372898181
+      ]
+    ],
+    "stacks": [
+      [
+        0.4934,
+        0.6083,
+        -1.0484
+      ],
+      [
+        -0.4777,
+        0.0834,
+        3.4453
+      ],
+      [
+        -1.1013,
+        -0.123,
+        3.4429
+      ],
+      [
+        -2.7505,
+        -0.0914,
+        -2.4357
+      ],
+      [
+        -2.6526,
+        0.0262,
+        -1.7333
+      ],
+      [
+        -0.0611,
+        0.4971,
+        -1.4289
+      ],
+      [
+        3.5377,
+        -0.0558,
+        0.5834
+      ],
+      [
+        3.9059,
+        0.0603,
+        0.984
+      ],
+      [
+        2.3447,
+        0.0958,
+        0.7404
+      ],
+      [
+        3.5218,
+        -0.088,
+        0.6872
+      ],
+      [
+        3.376,
+        0.0902,
+        1.3704
+      ],
+      [
+        0.2885,
+        0.57,
+        -1.2999
+      ],
+      [
+        1.4684,
+        -0.3925,
+        1.5468
+      ],
+      [
+        0.5663,
+        0.3812,
+        -1.5352
+      ],
+      [
+        -2.9747,
+        0.091,
+        -2.4191
+      ],
+      [
+        -2.7582,
+        0.093,
+        -2.5538
+      ],
+      [
+        -2.6932,
+        -0.0487,
+        -2.3251
+      ],
+      [
+        3.073,
+        -0.0429,
+        0.4609
+      ],
+      [
+        3.5484,
+        -0.0251,
+        0.3562
+      ],
+      [
+        -2.2707,
+        0.1176,
+        -2.1366
+      ],
+      [
+        4.3906,
+        -0.0164,
+        -0.1747
+      ],
+      [
+        2.9545,
+        -0.0287,
+        0.549
+      ],
+      [
+        0.4752,
+        -0.3936,
+        1.6349
+      ],
+      [
+        -3.7014,
+        -0.0339,
+        -2.1562
+      ],
+      [
+        -2.4535,
+        0.087,
+        -1.7589
+      ],
+      [
+        -3.1514,
+        -0.0244,
+        -2.6522
+      ],
+      [
+        -3.1431,
+        0.0443,
+        -1.4892
+      ],
+      [
+        -2.3681,
+        -0.1249,
+        -2.456
+      ],
+      [
+        2.8936,
+        -0.0088,
+        1.5244
+      ],
+      [
+        -3.5712,
+        0.074,
+        -1.7241
+      ],
+      [
+        -2.7838,
+        -0.0412,
+        -1.5928
+      ],
+      [
+        3.3909,
+        -0.0752,
+        0.1628
+      ],
+      [
+        3.6114,
+        -0.1068,
+        1.1476
+      ],
+      [
+        2.2542,
+        -0.0014,
+        1.4467
+      ],
+      [
+        -3.0467,
+        0.0675,
+        -1.2348
+      ],
+      [
+        2.5884,
+        0.0045,
+        -2.4269
+      ],
+      [
+        0.646,
+        0.0754,
+        0.1873
+      ],
+      [
+        2.5223,
+        0.0979,
+        0.2039
+      ],
+      [
+        -1.6524,
+        0.012,
+        3.4907
+      ],
+      [
+        2.6126,
+        -0.0632,
+        -3.5007
+      ],
+      [
+        -3.6344,
+        -0.0564,
+        -2.729
+      ],
+      [
+        3.4455,
+        0.01,
+        1.2269
+      ],
+      [
+        3.3618,
+        -0.1089,
+        1.4249
+      ],
+      [
+        3.2588,
+        -0.02,
+        -0.5661
+      ],
+      [
+        -0.3987,
+        0.0664,
+        3.6639
+      ],
+      [
+        -3.3897,
+        0.0884,
+        -1.6186
+      ],
+      [
+        3.7165,
+        0.0258,
+        0.8023
+      ],
+      [
+        3.0842,
+        -0.041,
+        1.4304
+      ],
+      [
+        2.6474,
+        -0.0931,
+        0.3614
+      ],
+      [
+        2.6867,
+        -0.1182,
+        0.7224
+      ],
+      [
+        2.6399,
+        -0.0302,
+        0.4888
+      ],
+      [
+        3.1497,
+        0.063,
+        1.4319
+      ],
+      [
+        0.2455,
+        0.5099,
+        -1.6171
+      ],
+      [
+        3.5975,
+        0.0379,
+        1.0419
+      ]
+    ],
+    "ia": [
+      [
+        0.0134,
+        0.6232,
+        -0.5052
+      ],
+      [
+        0.7736,
+        -0.9076,
+        1.099
+      ],
+      [
+        0.376,
+        0.4908,
+        1.8425
+      ],
+      [
+        -0.8602,
+        0.3771,
+        -0.6869
+      ],
+      [
+        0.595,
+        -0.4619,
+        -0.1341
+      ],
+      [
+        -0.2929,
+        0.9124,
+        -0.5964
+      ],
+      [
+        3.1377,
+        0.8741,
+        1.6236
+      ],
+      [
+        0.1795,
+        0.7511,
+        -1.2624
+      ],
+      [
+        2.8717,
+        1.1868,
+        -0.2925
+      ],
+      [
+        -1.1109,
+        0.0116,
+        1.1745
+      ],
+      [
+        0.6695,
+        -1.1748,
+        -1.3703
+      ],
+      [
+        0.7443,
+        0.4287,
+        -1.3804
+      ],
+      [
+        3.6628,
+        -1.1653,
+        -0.8073
+      ],
+      [
+        -1.9994,
+        -0.1567,
+        0.2081
+      ],
+      [
+        0.5567,
+        0.4939,
+        -0.7491
+      ],
+      [
+        0.0723,
+        -0.0796,
+        1.8731
+      ],
+      [
+        0.8313,
+        0.4996,
+        0.1516
+      ],
+      [
+        0.6679,
+        -0.4562,
+        -2.1551
+      ],
+      [
+        -0.1416,
+        -2.5263,
+        0.8499
+      ],
+      [
+        -0.7838,
+        -0.0575,
+        -4.1194
+      ],
+      [
+        -1.2576,
+        -0.0228,
+        -1.6404
+      ],
+      [
+        0.2433,
+        0.3415,
+        1.3485
+      ],
+      [
+        -3.6528,
+        0.1377,
+        0.6195
+      ],
+      [
+        -0.5917,
+        0.3242,
+        1.0638
+      ],
+      [
+        0.6815,
+        -0.439,
+        0.6453
+      ],
+      [
+        0.1379,
+        -0.8765,
+        -1.7969
+      ],
+      [
+        -0.0828,
+        0.9848,
+        -0.5139
+      ],
+      [
+        2.0717,
+        -1.1911,
+        1.5157
+      ],
+      [
+        1.544,
+        0.0636,
+        0.1376
+      ],
+      [
+        -1.1278,
+        0.308,
+        -0.393
+      ],
+      [
+        -2.5634,
+        1.7228,
+        0.1471
+      ],
+      [
+        -0.8731,
+        -0.4581,
+        0.3427
+      ],
+      [
+        -1.1158,
+        0.5695,
+        0.1572
+      ],
+      [
+        -0.3846,
+        -0.6656,
+        -0.4067
+      ],
+      [
+        -0.0649,
+        0.745,
+        0.1844
+      ],
+      [
+        -0.8592,
+        0.4694,
+        -0.678
+      ],
+      [
+        -2.3051,
+        -0.1675,
+        0.7407
+      ],
+      [
+        -0.6572,
+        0.2885,
+        1.8119
+      ],
+      [
+        2.5836,
+        -1.1798,
+        -0.8829
+      ],
+      [
+        0.4026,
+        -0.3771,
+        0.6092
+      ],
+      [
+        -1.2683,
+        0.1527,
+        0.4077
+      ],
+      [
+        -0.9125,
+        0.9103,
+        -3.2913
+      ],
+      [
+        1.4418,
+        0.6859,
+        -0.7471
+      ],
+      [
+        1.6826,
+        -0.1672,
+        -0.7449
+      ],
+      [
+        0.6396,
+        0.3947,
+        -0.4149
+      ],
+      [
+        -1.1641,
+        1.1324,
+        3.0741
+      ],
+      [
+        1.4349,
+        0.4941,
+        1.4233
+      ],
+      [
+        -0.9825,
+        -0.0073,
+        -0.0029
+      ],
+      [
+        -1.066,
+        -0.2671,
+        0.4851
+      ],
+      [
+        2.8767,
+        1.6118,
+        -0.7019
+      ],
+      [
+        1.1888,
+        0.2618,
+        -0.0032
+      ],
+      [
+        0.0826,
+        -0.0744,
+        -2.0968
+      ],
+      [
+        1.624,
+        0.4044,
+        3.5367
+      ],
+      [
+        1.2413,
+        -0.283,
+        0.8014
+      ]
+    ],
+    "fuga_base": [
+      [
+        2.8619,
+        -1.9419,
+        -1.3616
+      ],
+      [
+        0.4008,
+        -2.0556,
+        -0.3614
+      ],
+      [
+        0.1168,
+        -1.9527,
+        3.905
+      ],
+      [
+        -1.1058,
+        -1.9624,
+        2.0515
+      ],
+      [
+        3.4214,
+        -1.9405,
+        -0.4951
+      ],
+      [
+        -2.0856,
+        -1.9847,
+        -2.733
+      ],
+      [
+        3.3034,
+        -2.1148,
+        -0.3084
+      ],
+      [
+        0.071,
+        -1.8996,
+        -1.8126
+      ],
+      [
+        -0.9313,
+        -1.9975,
+        3.3749
+      ],
+      [
+        2.32,
+        -1.8697,
+        -0.6805
+      ],
+      [
+        -1.6116,
+        -1.8503,
+        0.6955
+      ],
+      [
+        -1.239,
+        -1.987,
+        0.4153
+      ],
+      [
+        1.58,
+        -2.0799,
+        0.5744
+      ],
+      [
+        1.6418,
+        -2.0342,
+        2.4913
+      ],
+      [
+        -0.0374,
+        -1.9993,
+        -3.7038
+      ],
+      [
+        -0.4776,
+        -2.0129,
+        0.2076
+      ],
+      [
+        -2.7651,
+        -1.8592,
+        -0.2441
+      ],
+      [
+        2.8141,
+        -1.8922,
+        2.8187
+      ],
+      [
+        2.0752,
+        -2.1392,
+        2.9791
+      ],
+      [
+        3.9794,
+        -2.0198,
+        1.9741
+      ],
+      [
+        -0.4506,
+        -1.879,
+        1.552
+      ],
+      [
+        -1.0013,
+        -1.9907,
+        -2.8354
+      ],
+      [
+        -3.3683,
+        -1.9641,
+        2.9667
+      ],
+      [
+        -0.3108,
+        -2.0734,
+        -1.9682
+      ],
+      [
+        1.4209,
+        -2.0175,
+        -2.7362
+      ],
+      [
+        -0.6055,
+        -1.8964,
+        -1.9992
+      ],
+      [
+        -2.1024,
+        -1.9776,
+        0.5754
+      ],
+      [
+        1.2658,
+        -1.9802,
+        -1.8042
+      ],
+      [
+        0.8513,
+        -1.8788,
+        -0.0262
+      ],
+      [
+        -1.1814,
+        -1.9637,
+        1.0929
+      ],
+      [
+        2.7067,
+        -1.879,
+        1.026
+      ],
+      [
+        0.6366,
+        -2.123,
+        1.8589
+      ],
+      [
+        -2.9427,
+        -1.8586,
+        0.3153
+      ],
+      [
+        -1.9442,
+        -2.0054,
+        2.5975
+      ],
+      [
+        -3.0786,
+        -2.1078,
+        3.7031
+      ],
+      [
+        3.8395,
+        -1.9086,
+        3.7382
+      ],
+      [
+        0.2926,
+        -1.9482,
+        -0.3617
+      ],
+      [
+        3.5223,
+        -2.0799,
+        -3.1332
+      ],
+      [
+        3.322,
+        -2.131,
+        -2.2291
+      ],
+      [
+        -0.7336,
+        -1.8661,
+        -2.8818
+      ],
+      [
+        3.0981,
+        -2.0139,
+        -2.9147
+      ],
+      [
+        -0.647,
+        -2.1036,
+        1.9382
+      ],
+      [
+        -0.7351,
+        -2.1402,
+        3.6122
+      ],
+      [
+        2.8436,
+        -1.9443,
+        -3.2052
+      ],
+      [
+        -0.8149,
+        -2.1134,
+        -2.4815
+      ],
+      [
+        1.1336,
+        -2.1436,
+        0.7772
+      ],
+      [
+        0.5166,
+        -1.9205,
+        -3.4511
+      ],
+      [
+        -1.3715,
+        -1.8798,
+        -2.8196
+      ],
+      [
+        -2.9601,
+        -2.0977,
+        -1.9948
+      ],
+      [
+        2.3199,
+        -2.0529,
+        -2.0965
+      ],
+      [
+        0.2087,
+        -2.0071,
+        1.9653
+      ],
+      [
+        0.0307,
+        -2.137,
+        3.5633
+      ],
+      [
+        -0.3357,
+        -2.1318,
+        3.7122
+      ],
+      [
+        -0.0778,
+        -2.128,
+        3.2776
+      ]
+    ],
+    "fuga_alvo": [
+      [
+        -0.2541,
+        1.5941,
+        0.5342
+      ],
+      [
+        -0.2121,
+        0.4713,
+        -2.4358
+      ],
+      [
+        0.0511,
+        1.4063,
+        -0.1041
+      ],
+      [
+        0.312,
+        4.5148,
+        3.1443
+      ],
+      [
+        -0.4543,
+        4.5327,
+        4.0678
+      ],
+      [
+        -2.4373,
+        3.1477,
+        -0.4881
+      ],
+      [
+        0.3986,
+        1.565,
+        -0.0019
+      ],
+      [
+        0.5763,
+        4.5154,
+        3.1925
+      ],
+      [
+        0.4552,
+        1.4329,
+        0.4368
+      ],
+      [
+        0.0093,
+        4.4349,
+        3.8847
+      ],
+      [
+        1.9876,
+        0.0116,
+        -2.4217
+      ],
+      [
+        -2.5536,
+        2.9066,
+        -0.2139
+      ],
+      [
+        0.3307,
+        1.5734,
+        -0.5476
+      ],
+      [
+        0.1964,
+        0.6442,
+        -2.6151
+      ],
+      [
+        0.1082,
+        4.6123,
+        3.9436
+      ],
+      [
+        0.2669,
+        4.5464,
+        3.392
+      ],
+      [
+        -0.1937,
+        4.545,
+        3.7312
+      ],
+      [
+        -0.144,
+        2.5656,
+        3.28
+      ],
+      [
+        -0.5179,
+        1.6263,
+        0.1574
+      ],
+      [
+        -0.4819,
+        1.6118,
+        0.1605
+      ],
+      [
+        -0.5448,
+        0.438,
+        -2.6446
+      ],
+      [
+        0.0791,
+        4.401,
+        3.851
+      ],
+      [
+        2.689,
+        1.8929,
+        -0.5046
+      ],
+      [
+        -0.5887,
+        4.6204,
+        3.8656
+      ],
+      [
+        -2.6853,
+        3.0417,
+        0.1051
+      ],
+      [
+        -0.3609,
+        4.495,
+        3.3616
+      ],
+      [
+        0.5912,
+        4.6434,
+        3.2543
+      ],
+      [
+        0.223,
+        4.3647,
+        3.7936
+      ],
+      [
+        -2.7566,
+        3.0321,
+        0.3586
+      ],
+      [
+        0.2133,
+        4.5478,
+        3.7651
+      ],
+      [
+        0.1756,
+        4.4822,
+        3.2707
+      ],
+      [
+        -0.2459,
+        4.4027,
+        3.797
+      ],
+      [
+        0.037,
+        4.5991,
+        3.9962
+      ],
+      [
+        0.3678,
+        1.4516,
+        0.2959
+      ],
+      [
+        0.5598,
+        0.5673,
+        -2.5678
+      ],
+      [
+        -0.1611,
+        -0.1458,
+        0.3488
+      ],
+      [
+        -2.2932,
+        3.0967,
+        0.1015
+      ],
+      [
+        -0.57,
+        0.5184,
+        -2.5389
+      ],
+      [
+        0.3886,
+        4.4407,
+        3.9913
+      ],
+      [
+        -0.2348,
+        4.3792,
+        3.4911
+      ],
+      [
+        0.2046,
+        0.6338,
+        -2.7082
+      ],
+      [
+        -0.1021,
+        4.4968,
+        3.0188
+      ],
+      [
+        -0.1554,
+        1.6352,
+        -0.0679
+      ],
+      [
+        0.0534,
+        4.4576,
+        4.0734
+      ],
+      [
+        0.4176,
+        0.5488,
+        -3.0543
+      ],
+      [
+        0.3442,
+        1.3878,
+        -0.3077
+      ],
+      [
+        -0.3514,
+        0.6109,
+        -3.3409
+      ],
+      [
+        -0.5966,
+        4.3934,
+        3.9301
+      ],
+      [
+        0.1933,
+        2.3545,
+        2.9309
+      ],
+      [
+        -0.3909,
+        4.5725,
+        2.9629
+      ],
+      [
+        0.3336,
+        4.3827,
+        3.5159
+      ],
+      [
+        -2.1601,
+        3.0064,
+        0.4404
+      ],
+      [
+        -0.0252,
+        0.5558,
+        -3.1181
+      ],
+      [
+        -0.5031,
+        1.3697,
+        0.13
+      ]
+    ]
+  },
+  "chapters": {
+    "origem": {
+      "title": "A Origem",
+      "n_nula": 25,
+      "n_auto": 19,
+      "n_prof": 7,
+      "n_empregados": 42
+    },
+    "stacks": {
+      "title": "As Stacks",
+      "planets": [
+        "JS/TS",
+        "Python",
+        "Java",
+        "SQL/BD",
+        "C#/.NET",
+        "Cloud",
+        "Kotlin/Swift",
+        "Go"
+      ],
+      "n_links": 23,
+      "media_stacks": 3.4,
+      "top_stack": "SQL/BD"
+    },
+    "ia": {
+      "title": "O Paradoxo da IA",
+      "n_positivo": 42,
+      "n_fear_subst": 40,
+      "n_fear_stag": 22
+    },
+    "fuga": {
+      "title": "A Rota de Fuga",
+      "n_exterior": 40,
+      "n_ingles": 43,
+      "objetivos": {
+        "migrar": 11,
+        "promocao": 9,
+        "exterior": 25,
+        "empreender": 6,
+        "primeiro_emprego": 1,
+        "outro": 1,
+        "estavel": 1
+      }
+    }
+  }
+}

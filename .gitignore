@@ -1,0 +1,24 @@
+# Dependências
+node_modules/
+
+# Scripts auxiliares
+*.py
+test_anim.js
+fix_*.js
+
+# LaTeX (manter só o PDF)
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.tex
+main.snm
+
+# Imagens geradas (gráficos dos dados)
+*.png
+
+# Arquivos de análise separados
+nexus.html
+wasserstein_tabela.tex
