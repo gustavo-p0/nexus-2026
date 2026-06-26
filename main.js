@@ -179,10 +179,14 @@ const PERSONALITY_POOL = ['hyper', 'chill', 'nervous', 'curious', 'proud'];
 nodes.forEach((n, i) => {
   // Deterministic personality from index so it stays consistent
   n.personality = PERSONALITY_POOL[i % PERSONALITY_POOL.length];
-  n.bobAmp  = 0.12 + Math.random() * 0.55;  // unique bounce height
-  n.bobFreq = 0.50 + Math.random() * 1.80;  // unique bounce speed
-  n.swayAmp = 0.04 + Math.random() * 0.12;  // unique sway angle
-  n.lifeTimer = null;
+  n.bobAmp  = 0.12 + Math.random() * 0.55;
+  n.bobFreq = 0.50 + Math.random() * 1.80;
+  n.swayAmp = 0.04 + Math.random() * 0.12;
+  n.lifeTimer      = null;
+  n.wanderTimer    = null;  // delayed call for next wander target
+  n.wanderMoveTween = null; // active position tween (x, z)
+  n.wanderLegL     = null;  // leg tween while walking
+  n.wanderLegR     = null;
 });
 
 // ═══ PROCEDURAL TEXTURES (Chão Metálico) ═══
@@ -517,8 +521,111 @@ function startLifeLoops(delay = 0) {
 
 // ───────────────────────────────────────────────────────────────
 
+// ═══ WANDERING SYSTEM — locomoção autônoma pela arena ═══
+
+let wanderActive = false;
+
+function stopWandering() {
+  wanderActive = false;
+  nodes.forEach(n => {
+    if (n.wanderTimer)     { n.wanderTimer.kill();     n.wanderTimer = null; }
+    if (n.wanderMoveTween) { n.wanderMoveTween.kill(); n.wanderMoveTween = null; }
+    if (n.wanderLegL)      { n.wanderLegL.kill();      n.wanderLegL = null; }
+    if (n.wanderLegR)      { n.wanderLegR.kill();      n.wanderLegR = null; }
+  });
+}
+
+function doWander(n, opts) {
+  if (!wanderActive || !n.match) {
+    n.wanderTimer = gsap.delayedCall(0.8 + Math.random(), () => doWander(n, opts));
+    return;
+  }
+
+  // Escolhe destino aleatório na zona do personagem
+  const angle = Math.random() * Math.PI * 2;
+  const r     = (0.25 + Math.random() * 0.75) * opts.radius;
+  let tx = n.baseX + Math.cos(angle) * r;
+  let tz = n.baseZ + Math.sin(angle) * r;
+
+  // Mantém dentro da arena
+  const maxR  = PLATFORM_R - 3.5;
+  const mag   = Math.sqrt(tx * tx + tz * tz);
+  if (mag > maxR) { tx *= maxR / mag; tz *= maxR / mag; }
+
+  // Evita a mesa central (raio 3.5)
+  const ctr = Math.sqrt(tx * tx + tz * tz);
+  if (ctr < 3.5) { tx *= 3.5 / ctr; tz *= 3.5 / ctr; }
+
+  const dx   = tx - n.group.position.x;
+  const dz   = tz - n.group.position.z;
+  const dist = Math.sqrt(dx * dx + dz * dz);
+  if (dist < 0.5) {
+    // Já está perto — aguarda e tenta de novo
+    n.wanderTimer = gsap.delayedCall(0.5 + Math.random() * 1.5, () => doWander(n, opts));
+    return;
+  }
+
+  const moveDur = Math.max(0.6, dist / opts.speed);
+
+  // Vira na direção do destino
+  if (opts.faceDir) {
+    gsap.to(n.group.rotation, { y: Math.atan2(dx, dz), duration: 0.25, ease: 'power2.out', overwrite: 'auto' });
+  }
+
+  // Animação de pernas durante a caminhada (só se o capítulo não controlar)
+  if (opts.animateLegs) {
+    const stepDur = 0.09 + (1 / n.bobFreq) * 0.07;
+    if (n.wanderLegL) n.wanderLegL.kill();
+    if (n.wanderLegR) n.wanderLegR.kill();
+    n.wanderLegL = gsap.fromTo(n.legL.position, { z: 0.24, y: 0.2 }, { z: -0.12, y: 0.44, duration: stepDur, yoyo: true, repeat: -1, ease: 'sine.inOut' });
+    n.wanderLegR = gsap.fromTo(n.legR.position, { z: -0.24, y: 0.2 }, { z: 0.12, y: 0.44, duration: stepDur, yoyo: true, repeat: -1, ease: 'sine.inOut', delay: stepDur });
+  }
+
+  // Move até o destino — só X e Z (Y é controlado pelo capítulo)
+  n.wanderMoveTween = gsap.to(n.group.position, {
+    x: tx, z: tz,
+    duration: moveDur,
+    ease: 'sine.inOut',
+    overwrite: 'auto',
+    onComplete: () => {
+      if (!wanderActive) return;
+
+      // Para pernas durante a pausa
+      if (opts.animateLegs) {
+        if (n.wanderLegL) { n.wanderLegL.kill(); n.wanderLegL = null; }
+        if (n.wanderLegR) { n.wanderLegR.kill(); n.wanderLegR = null; }
+        gsap.to(n.legL.position, { z: 0, y: 0.2, duration: 0.15 });
+        gsap.to(n.legR.position, { z: 0, y: 0.2, duration: 0.15 });
+      }
+
+      // Pausa antes do próximo destino
+      const pause = 0.3 + Math.random() * (opts.pauseMax ?? 2.5);
+      n.wanderTimer = gsap.delayedCall(pause, () => doWander(n, opts));
+    }
+  });
+}
+
+function startWandering(opts = {}) {
+  const options = {
+    radius:       opts.radius       ?? 7,
+    speed:        opts.speed        ?? 2.8,   // unidades/segundo
+    animateLegs:  opts.animateLegs  ?? true,
+    faceDir:      opts.faceDir      ?? true,
+    initialDelay: opts.initialDelay ?? 0,
+    pauseMax:     opts.pauseMax     ?? 2.5,
+  };
+  wanderActive = true;
+  nodes.forEach(n => {
+    const delay = options.initialDelay + Math.random() * 2.0;
+    n.wanderTimer = gsap.delayedCall(delay, () => doWander(n, options));
+  });
+}
+
+// ───────────────────────────────────────────────────────────────
+
 function applyChapterVisual(ch) {
-  stopLifeLoops(); // halt individual behaviors before chapter transition
+  stopLifeLoops();   // halt individual behaviors before chapter transition
+  stopWandering();   // halt locomotion before chapter transition
 
   gsap.killTweensOf(arenaGroup.rotation);
   gsap.to(arenaGroup.rotation, { y: 0, duration: 2.5, ease: 'power3.inOut' });
@@ -570,10 +677,16 @@ function applyChapterVisual(ch) {
         delay: n.idx * 0.04
       });
     });
-    // After everyone lands, start autonomous life
-    gsap.delayedCall(3.2, () => startLifeLoops(0));
+    // After everyone lands, start autonomous life + wandering
+    gsap.delayedCall(3.2, () => {
+      startLifeLoops(0);
+      startWandering({ radius: 12, speed: 1.8, animateLegs: true, faceDir: true, pauseMax: 3.5 });
+    });
   } 
   else if (ch === 1) {
+    // Wandering: capítulo controla as pernas, wandering só move X/Z
+    startWandering({ radius: 10, speed: 3.0, animateLegs: false, faceDir: true, initialDelay: 0.6, pauseMax: 1.5 });
+
     // Walking — each has unique step speed, swing amplitude, and wobble
     nodes.forEach(n => {
       const stepDur  = 0.08 + (1 / n.bobFreq) * 0.14;    // faster personalities step faster
@@ -595,6 +708,9 @@ function applyChapterVisual(ch) {
     });
   } 
   else if (ch === 2) {
+    // Wandering lento — parecem caminhar enquanto olham para o centro
+    gsap.delayedCall(1.2, () => startWandering({ radius: 5, speed: 1.2, animateLegs: false, faceDir: false, pauseMax: 4 }));
+
     // Turn to face center — curious ones look back and forth, proud ones stay steady
     nodes.forEach(n => {
       const angle = Math.atan2(n.baseX, n.baseZ);
@@ -625,6 +741,9 @@ function applyChapterVisual(ch) {
     });
   } 
   else if (ch === 4) {
+    // Wandering por toda a arena enquanto exibem o tamanho
+    gsap.delayedCall(2.0, () => startWandering({ radius: 8, speed: 1.6, animateLegs: true, faceDir: true, pauseMax: 3 }));
+
     // Size by seniority + idle personality behavior after scaling
     nodes.forEach(n => {
       const isSenior = S[n.idx].sen >= 2;
@@ -650,6 +769,9 @@ function applyChapterVisual(ch) {
     });
   } 
   else if (ch === 5) {
+    // Wandering leve: dançam e ao mesmo tempo se movem pela arena
+    startWandering({ radius: 7, speed: 1.5, animateLegs: false, faceDir: false, initialDelay: 0.5, pauseMax: 2 });
+
     // ★ DANCE PARTY — cada personalidade tem seu estilo próprio
     nodes.forEach(n => {
       const beat  = 0.35 + n.bobAmp * 0.2;   // tempo individual
