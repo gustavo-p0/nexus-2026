@@ -650,25 +650,84 @@ function applyChapterVisual(ch) {
     });
   } 
   else if (ch === 5) {
-    // Stack vibration — intensity varies by personality
-    connGroup.children.forEach(l => gsap.to(l.material, { opacity: 0.6, duration: 1.5 }));
+    // ★ DANCE PARTY — cada personalidade tem seu estilo próprio
     nodes.forEach(n => {
-      const vib    = 0.05 + n.bobAmp * 0.25;
-      const vibDur = (n.personality === 'hyper') ? 0.05 : (n.personality === 'chill') ? 0.12 : 0.08;
-      gsap.fromTo(n.group.rotation, { z: -vib }, { z: vib, duration: vibDur, yoyo: true, repeat: -1, delay: Math.random() });
-      gsap.fromTo(n.group.position, { x: n.baseX - vib*2 }, { x: n.baseX + vib*2, duration: vibDur, yoyo: true, repeat: -1, delay: Math.random() });
+      const beat  = 0.35 + n.bobAmp * 0.2;   // tempo individual
+      const jumpH = n.bobAmp * 2.8;
+      const phase = Math.random();             // offset de fase para não ficarem sincronizados
+
+      if (n.personality === 'hyper') {
+        // Breakdancer — giro contínuo + salto alto + pernas cruzando
+        gsap.fromTo(n.group.rotation, { y: 0 }, { y: Math.PI * 2, duration: 0.45, repeat: -1, ease: 'none' });
+        gsap.fromTo(n.group.position, { y: n.baseY }, { y: n.baseY + jumpH * 1.6, duration: beat * 0.45, yoyo: true, repeat: -1, ease: 'power2.out', delay: phase });
+        gsap.fromTo(n.legL.position, { z: -0.25, y: 0.2 }, { z: 0.35, y: 0.55, duration: 0.13, yoyo: true, repeat: -1 });
+        gsap.fromTo(n.legR.position, { z:  0.25, y: 0.2 }, { z: -0.35, y: 0.55, duration: 0.13, yoyo: true, repeat: -1, delay: 0.13 });
+
+      } else if (n.personality === 'chill') {
+        // Head-bop suave — balanço lento e orgânico
+        gsap.fromTo(n.group.rotation, { z: -0.28 }, { z: 0.28, duration: beat * 2.2, yoyo: true, repeat: -1, ease: 'sine.inOut', delay: phase });
+        gsap.fromTo(n.group.position, { y: n.baseY }, { y: n.baseY + jumpH * 0.5, duration: beat * 1.1, yoyo: true, repeat: -1, ease: 'sine.inOut', delay: phase });
+        gsap.fromTo(n.legL.position, { z:  0.12, y: 0.22 }, { z: -0.12, y: 0.32, duration: beat * 0.9, yoyo: true, repeat: -1, delay: phase });
+        gsap.fromTo(n.legR.position, { z: -0.12, y: 0.22 }, { z:  0.12, y: 0.32, duration: beat * 0.9, yoyo: true, repeat: -1, delay: phase + beat * 0.45 });
+
+      } else if (n.personality === 'nervous') {
+        // Robot — movimentos mecânicos e abruptos
+        gsap.fromTo(n.group.rotation, { y: -Math.PI / 3 }, { y: Math.PI / 3, duration: 0.28, yoyo: true, repeat: -1, ease: 'steps(2)' });
+        gsap.fromTo(n.group.position, { y: n.baseY }, { y: n.baseY + jumpH, duration: 0.28, yoyo: true, repeat: -1, ease: 'steps(1)', delay: phase });
+        gsap.fromTo(n.legL.position, { y: 0.2, x: -0.15 }, { y: 0.52, x: -0.15, duration: 0.28, yoyo: true, repeat: -1 });
+        gsap.fromTo(n.legR.position, { y: 0.52, x:  0.15 }, { y: 0.2,  x:  0.15, duration: 0.28, yoyo: true, repeat: -1 });
+
+      } else if (n.personality === 'curious') {
+        // Shuffle — passos laterais rápidos com olhadas
+        gsap.fromTo(n.group.rotation, { y: -1.0 }, { y: 1.0, duration: beat * 1.4, yoyo: true, repeat: -1, ease: 'sine.inOut', delay: phase });
+        gsap.fromTo(n.group.position, { y: n.baseY }, { y: n.baseY + jumpH * 0.9, duration: beat * 0.6, yoyo: true, repeat: -1, ease: 'power1.out', delay: phase });
+        gsap.fromTo(n.legL.position, { z:  0.22, y: 0.2 }, { z: -0.08, y: 0.42, duration: beat * 0.55, yoyo: true, repeat: -1, delay: phase });
+        gsap.fromTo(n.legR.position, { z: -0.22, y: 0.2 }, { z:  0.08, y: 0.42, duration: beat * 0.55, yoyo: true, repeat: -1, delay: phase + beat * 0.28 });
+
+      } else {
+        // Proud — strut de marchador: peito pra frente, passo alto e orgulhoso
+        gsap.fromTo(n.group.rotation, { x: -0.18 }, { x: 0.08, duration: beat * 0.7, yoyo: true, repeat: -1, ease: 'sine.inOut', delay: phase });
+        gsap.fromTo(n.group.position, { y: n.baseY }, { y: n.baseY + jumpH * 1.1, duration: beat * 0.55, yoyo: true, repeat: -1, ease: 'power2.out', delay: phase });
+        gsap.fromTo(n.legL.position, { z:  0.32, y: 0.2, x: -0.15 }, { z: -0.08, y: 0.55, x: -0.15, duration: beat * 0.55, yoyo: true, repeat: -1, delay: phase });
+        gsap.fromTo(n.legR.position, { z: -0.32, y: 0.2, x:  0.15 }, { z:  0.08, y: 0.55, x:  0.15, duration: beat * 0.55, yoyo: true, repeat: -1, delay: phase + beat * 0.28 });
+      }
     });
   } 
   else if (ch === 6) {
-    // Panic — each panics differently
+    // ★ BATALHA — todos carregam em direção à mesa em ondas
     nodes.forEach(n => {
-      const panicDur = (n.personality === 'nervous') ? 0.03 : (n.personality === 'hyper') ? 0.04 : 0.06;
-      const radius   = 1.0 + n.bobAmp;
-      gsap.to(n.group.scale, { y: n.baseScale * 0.7, duration: 0.3 });
-      gsap.fromTo(n.group.position, { x: n.baseX - radius, z: n.baseZ - radius }, { x: n.baseX + radius, z: n.baseZ + radius, duration: panicDur, yoyo: true, repeat: -1 });
-      gsap.fromTo(n.group.rotation, { y: 0 }, { y: Math.PI * 2, duration: panicDur * 4, repeat: -1, ease: 'none' });
-      gsap.fromTo(n.legL.position, { y: 0.2 }, { y: 0.45, duration: panicDur, yoyo: true, repeat: -1 });
-      gsap.fromTo(n.legR.position, { y: 0.2 }, { y: 0.45, duration: panicDur, yoyo: true, repeat: -1, delay: panicDur });
+      // Vira para encarar o centro
+      const faceAngle = Math.atan2(n.baseX, n.baseZ) + Math.PI;
+      gsap.to(n.group.rotation, { y: faceAngle, duration: 0.4, ease: 'power2.out' });
+
+      // Distância até o centro e vetor de carga
+      const dist    = Math.sqrt(n.baseX * n.baseX + n.baseZ * n.baseZ);
+      const ratio   = Math.max(0.15, (dist - 2.5) / dist); // para ~2.5u do centro
+      const attackX = n.baseX * ratio;
+      const attackZ = n.baseZ * ratio;
+      const chargeH = n.bobAmp * 1.5;
+
+      // Timing por personalidade: quem são os mais agressivos
+      const chargeDur  = { hyper: 0.18, nervous: 0.35, curious: 0.25, proud: 0.22, chill: 0.45 }[n.personality] || 0.3;
+      const retreatDur = chargeDur * 2.2;
+      const pause      = 0.1 + Math.random() * 0.4; // pausa antes de nova carga
+
+      // Timeline: carregar → recuar → esperar → repetir
+      const tl = gsap.timeline({ repeat: -1, delay: Math.random() * 1.5 });
+
+      // 1) Inclina o corpo para frente + carga
+      tl.to(n.group.rotation, { x: -0.55, duration: chargeDur * 0.4, ease: 'power2.in' });
+      tl.to(n.group.position, { x: attackX, z: attackZ, y: n.baseY + chargeH, duration: chargeDur, ease: 'power3.in' }, '<');
+      tl.to(n.legL.position,  { z: 0.32, y: 0.48, duration: chargeDur * 0.5, yoyo: true, repeat: 1, ease: 'sine.inOut' }, '<');
+      tl.to(n.legR.position,  { z: -0.32, y: 0.48, duration: chargeDur * 0.5, yoyo: true, repeat: 1, ease: 'sine.inOut', delay: chargeDur * 0.25 }, '<');
+
+      // 2) Recua com bounce (levou um soco imaginário)
+      tl.to(n.group.position, { x: n.baseX, z: n.baseZ, y: n.baseY, duration: retreatDur, ease: 'elastic.out(1, 0.4)' });
+      tl.to(n.group.rotation, { x: 0.2, duration: retreatDur * 0.3, ease: 'power1.out' }, '<');
+      tl.to(n.group.rotation, { x: 0, duration: retreatDur * 0.7, ease: 'sine.inOut' });
+
+      // 3) Pausa desafiante antes de nova carga
+      tl.to(n.group.rotation, { z: (Math.random() > 0.5 ? 1 : -1) * 0.15, duration: pause * 0.5, yoyo: true, repeat: 1 });
     });
   } 
   else if (ch === 7) {
