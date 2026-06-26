@@ -1010,7 +1010,7 @@ function animateHTML(section) {
 
   section.querySelectorAll('.stat-val, .paradox-num').forEach(el => {
     const t = parseFloat(el.dataset.target);
-    gsap.fromTo(el, { innerHTML: 0 }, { innerHTML: t, duration: 1.5, ease: 'power2.out', snap: { innerHTML: 0.1 }, onUpdate: function() { el.innerHTML = Number(this.targets()[0].innerHTML).toFixed(1); } });
+    gsap.fromTo(el, { innerHTML: 0 }, { innerHTML: t, duration: 1.5, ease: 'power2.out', snap: { innerHTML: Number.isInteger(t) ? 1 : 0.1 }, onUpdate: function() { const v = parseFloat(this.targets()[0].innerHTML); el.innerHTML = Number.isInteger(t) ? Math.round(v) : v.toFixed(1); } });
   });
 
   section.querySelectorAll('.ch-bar-row').forEach(el => {

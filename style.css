@@ -68,6 +68,12 @@ body{
   padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 800;
   letter-spacing: 1px; color: #f8fafc; text-transform: uppercase;
 }
+.ch-tag-multi {
+  background: transparent;
+  border: 1px solid #475569;
+  padding: 4px 10px; border-radius: 20px; font-size: 10px; font-weight: 600;
+  letter-spacing: 1px; color: #64748b; text-transform: uppercase;
+}
 
 /* TITLES */
 .ch-title {
