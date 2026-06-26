@@ -816,40 +816,40 @@ function applyChapterVisual(ch) {
     });
   } 
   else if (ch === 6) {
-    // ★ BATALHA — todos carregam em direção à mesa em ondas
+    // ★ CABO DE GUERRA — metade esquerda vs metade direita da arena
+    // Ambas as equipes puxam em sentidos opostos com a mesma frequência
+
+    const tugDur = 2.0; // período da corda — igual para todos (mesma frequência)
+
     nodes.forEach(n => {
-      // Vira para encarar o centro
-      const faceAngle = Math.atan2(n.baseX, n.baseZ) + Math.PI;
-      gsap.to(n.group.rotation, { y: faceAngle, duration: 0.4, ease: 'power2.out' });
+      // Divide por X: negativos = Time Esquerdo, positivos = Time Direito
+      const isLeft  = n.baseX <= 0;
+      const dir     = isLeft ? -1 : 1;
+      const pullDist = 3.5 + n.bobAmp * 2.5;
 
-      // Distância até o centro e vetor de carga
-      const dist    = Math.sqrt(n.baseX * n.baseX + n.baseZ * n.baseZ);
-      const ratio   = Math.max(0.15, (dist - 2.5) / dist); // para ~2.5u do centro
-      const attackX = n.baseX * ratio;
-      const attackZ = n.baseZ * ratio;
-      const chargeH = n.bobAmp * 1.5;
+      // Vira para olhar na direção que está puxando (para fora)
+      gsap.to(n.group.rotation, { y: isLeft ? -Math.PI / 2 : Math.PI / 2, duration: 0.5, ease: 'power2.out' });
 
-      // Timing por personalidade: quem são os mais agressivos
-      const chargeDur  = { hyper: 0.18, nervous: 0.35, curious: 0.25, proud: 0.22, chill: 0.45 }[n.personality] || 0.3;
-      const retreatDur = chargeDur * 2.2;
-      const pause      = 0.1 + Math.random() * 0.4; // pausa antes de nova carga
+      // Inclina o corpo no eixo Z (lean lateral de esforço)
+      const lean = dir * (0.3 + n.swayAmp * 2.0);
+      gsap.to(n.group.rotation, { z: lean, duration: 0.7, delay: 0.3, ease: 'power2.out' });
 
-      // Timeline: carregar → recuar → esperar → repetir
-      const tl = gsap.timeline({ repeat: -1, delay: Math.random() * 1.5 });
+      // Fase oposta entre os dois times: quando esquerdo avança, direito recua
+      const phase = isLeft ? 0 : tugDur;
 
-      // 1) Inclina o corpo para frente + carga
-      tl.to(n.group.rotation, { x: -0.55, duration: chargeDur * 0.4, ease: 'power2.in' });
-      tl.to(n.group.position, { x: attackX, z: attackZ, y: n.baseY + chargeH, duration: chargeDur, ease: 'power3.in' }, '<');
-      tl.to(n.legL.position,  { z: 0.32, y: 0.48, duration: chargeDur * 0.5, yoyo: true, repeat: 1, ease: 'sine.inOut' }, '<');
-      tl.to(n.legR.position,  { z: -0.32, y: 0.48, duration: chargeDur * 0.5, yoyo: true, repeat: 1, ease: 'sine.inOut', delay: chargeDur * 0.25 }, '<');
+      // Puxada no eixo X — oscila entre base e posição avançada
+      gsap.fromTo(n.group.position,
+        { x: n.baseX },
+        { x: n.baseX + dir * pullDist, duration: tugDur, yoyo: true, repeat: -1, ease: 'sine.inOut', delay: phase + Math.random() * 0.2 }
+      );
 
-      // 2) Recua com bounce (levou um soco imaginário)
-      tl.to(n.group.position, { x: n.baseX, z: n.baseZ, y: n.baseY, duration: retreatDur, ease: 'elastic.out(1, 0.4)' });
-      tl.to(n.group.rotation, { x: 0.2, duration: retreatDur * 0.3, ease: 'power1.out' }, '<');
-      tl.to(n.group.rotation, { x: 0, duration: retreatDur * 0.7, ease: 'sine.inOut' });
+      // Pernas cavando o chão (esforço de tração)
+      const legDur = 0.12 + n.bobAmp * 0.07;
+      gsap.fromTo(n.legL.position, { z:  0.28, y: 0.2 }, { z: -0.1, y: 0.46, duration: legDur, yoyo: true, repeat: -1, ease: 'sine.inOut' });
+      gsap.fromTo(n.legR.position, { z: -0.28, y: 0.2 }, { z:  0.1, y: 0.46, duration: legDur, yoyo: true, repeat: -1, ease: 'sine.inOut', delay: legDur });
 
-      // 3) Pausa desafiante antes de nova carga
-      tl.to(n.group.rotation, { z: (Math.random() > 0.5 ? 1 : -1) * 0.15, duration: pause * 0.5, yoyo: true, repeat: 1 });
+      // Corpo strainando (leve bob vertical de esforço)
+      gsap.fromTo(n.bodyMesh.position, { y: 0.7 }, { y: 0.77, duration: legDur * 2, yoyo: true, repeat: -1, ease: 'sine.inOut' });
     });
   } 
   else if (ch === 7) {
@@ -926,30 +926,45 @@ function applyChapterVisual(ch) {
     });
   } 
   else if (ch === 8) {
-    // IA paradox — colors + personality-flavored movements
-    nodes.forEach((n, i) => {
-      const s = S[i];
-      const swayDur = 0.4 + n.bobAmp * 0.4;
-      if (s.ia_pos && s.fear_subst) {
-        // Torn — purple, oscillates back and forth
-        gsap.to(n.suitMat.color, { r:0.6, g:0.2, b:0.8, duration: 1.5 });
-        gsap.fromTo(n.group.rotation, { y: -1.0 }, { y: 1.0, duration: swayDur, yoyo: true, repeat: -1, ease: 'sine.inOut', delay: Math.random() });
-      } else if (s.ia_pos) {
-        // Excited — green, floats up, tilts forward
-        gsap.to(n.suitMat.color, { r:0.1, g:0.8, b:0.3, duration: 1.5 });
-        const floatH = 3.0 + n.bobAmp * 2;
-        gsap.fromTo(n.group.position, { y: n.baseY }, { y: n.baseY + floatH, duration: 1.5 + n.bobAmp, yoyo: true, repeat: -1, ease: 'sine.inOut' });
-        gsap.to(n.group.rotation, { x: -0.4 - n.swayAmp, duration: 1.5 });
-        if (n.personality === 'hyper') {
-          gsap.fromTo(n.group.rotation, { z: -0.2 }, { z: 0.2, duration: 0.3, yoyo: true, repeat: -1 });
-        }
-      } else if (s.fear_subst) {
-        // Scared — red, shakes at own frequency
-        gsap.to(n.suitMat.color, { r:0.9, g:0.1, b:0.1, duration: 1.5 });
-        const shakeDur = (n.personality === 'nervous') ? 0.04 : 0.07;
-        gsap.fromTo(n.group.position, { x: n.baseX - 0.25 }, { x: n.baseX + 0.25, duration: shakeDur, yoyo: true, repeat: -1 });
-        gsap.fromTo(n.group.rotation, { z: -0.08 }, { z: 0.08, duration: shakeDur * 1.5, yoyo: true, repeat: -1 });
-      }
+    // ★ ROBÔS — IA transformou todos em máquinas
+    // Suit torna-se cinza metálico, visor vira scanner vermelho, movimentos mecânicos (steps)
+
+    startWandering({ radius: 9, speed: 2.5, animateLegs: false, faceDir: true, initialDelay: 0.5, pauseMax: 1.5 });
+
+    nodes.forEach(n => {
+      // Paleta metálica
+      gsap.to(n.suitMat.color, { r: 0.32, g: 0.36, b: 0.42, duration: 0.9 });
+      gsap.to(n.visorMat.color, { r: 0.95, g: 0.08, b: 0.08, duration: 0.9 });
+
+      // Velocidade de marcha por personalidade
+      const marchStep = { hyper: 0.14, nervous: 0.20, curious: 0.26, proud: 0.38, chill: 0.50 }[n.personality] || 0.28;
+
+      // Bob vertical mecânico (steps = abruptamente robótico)
+      gsap.fromTo(n.group.position,
+        { y: n.baseY },
+        { y: n.baseY + 0.45 + n.bobAmp * 0.5, duration: marchStep, yoyo: true, repeat: -1, ease: 'steps(1)', delay: Math.random() * 0.4 }
+      );
+
+      // Pernas em marcha mecânica
+      gsap.fromTo(n.legL.position, { y: 0.2, z: 0 }, { y: 0.52, z:  0.22, duration: marchStep, yoyo: true, repeat: -1, ease: 'steps(1)' });
+      gsap.fromTo(n.legR.position, { y: 0.2, z: 0 }, { y: 0.52, z: -0.22, duration: marchStep, yoyo: true, repeat: -1, ease: 'steps(1)', delay: marchStep });
+
+      // Scan rotacional mecânico (cabeça/corpo vira para os lados em degraus)
+      gsap.fromTo(n.group.rotation,
+        { y: -Math.PI * 0.35 },
+        { y:  Math.PI * 0.35, duration: marchStep * 7, yoyo: true, repeat: -1, ease: 'steps(5)', delay: Math.random() * 2 }
+      );
+
+      // Glitch periódico: tremor rápido de rotação
+      const scheduleGlitch = () => {
+        if (nav.current !== 8) return;
+        const glitchZ = (Math.random() - 0.5) * 0.55;
+        gsap.to(n.group.rotation, { z: glitchZ, duration: 0.05, ease: 'none',
+          onComplete: () => gsap.to(n.group.rotation, { z: 0, duration: 0.06 })
+        });
+        gsap.delayedCall(1.5 + Math.random() * 4, scheduleGlitch);
+      };
+      gsap.delayedCall(Math.random() * 3, scheduleGlitch);
     });
   } 
   else if (ch === 9) {
